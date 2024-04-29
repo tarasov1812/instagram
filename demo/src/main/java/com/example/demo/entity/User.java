@@ -1,6 +1,6 @@
-package com.example.entity;
+package com.example.demo.entity;
 
-import com.example.entity.enums.ERole;
+import com.example.demo.entity.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -32,7 +32,7 @@ public class User  {
     private String password;
     @ElementCollection(targetClass = ERole.class)
     @CollectionTable(name = "user_role",
-    joinColumns = @JoinColumn("user_id"))
+    joinColumns = @JoinColumn(name = "user_id"))
     private Set<ERole> role = new HashSet<>();
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy ="user", orphanRemoval = true)
     private List<Post> posts = new ArrayList<>();
