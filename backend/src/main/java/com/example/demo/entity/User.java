@@ -3,7 +3,10 @@ package com.example.demo.entity;
 import com.example.demo.entity.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -15,6 +18,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 @Data
+@Builder
+@AllArgsConstructor
 @Entity
 public class User implements UserDetails {
     @Id
@@ -48,14 +53,18 @@ public class User implements UserDetails {
 
     public User(Long id,
                 String username,
+                String name,
+                String lastname,
                 String email,
                 String password,
-                Collection<? extends GrantedAuthority> authorities) {
+                Set<ERole> roles) {
         this.id = id;
         this.username = username;
+        this.name = name;
+        this.lastname = lastname;
         this.email = email;
         this.password = password;
-        this.authorities = authorities;
+        this.roles = roles;
     }
 
     @PrePersist
