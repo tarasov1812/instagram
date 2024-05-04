@@ -131,7 +131,7 @@ public class ImageUploadService {
 
     private User getUserByPrincipal(Principal principal) {
         String username = principal.getName();
-        return userRepository.findUserByUsername(username)
+        return userRepository.findUserByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
 
     }
