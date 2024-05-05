@@ -8,12 +8,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./material-mogule";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {authInterceptorProvider} from "./helper/auth-interceptor.service";
-import {authErrorInterceptorProvider} from "./helper/error-interceptor.service";
+import {authInterceptorProviders} from "./helper/auth-interceptor.service";
+import {authErrorInterceptorProviders} from "./helper/error-interceptor.service";
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +31,8 @@ import {authErrorInterceptorProvider} from "./helper/error-interceptor.service";
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    authInterceptorProvider,
-    authErrorInterceptorProvider
+    authInterceptorProviders,
+    authErrorInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
