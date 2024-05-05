@@ -9,6 +9,7 @@ import {MaterialModule} from "./material-mogule";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {authInterceptorProvider} from "./helper/auth-interceptor.service";
+import {authErrorInterceptorProvider} from "./helper/error-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {authInterceptorProvider} from "./helper/auth-interceptor.service";
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    authInterceptorProvider
+    authInterceptorProvider,
+    authErrorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
