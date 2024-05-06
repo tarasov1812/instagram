@@ -5,13 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MaterialModule} from "./material-mogule";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {authInterceptorProviders} from "./helper/auth-interceptor.service";
 import {authErrorInterceptorProviders} from "./helper/error-interceptor.service";
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import {MatFormField} from "@angular/material/form-field";
+import {MatButton} from "@angular/material/button";
+import {MatInput} from "@angular/material/input";
+import {MatLabel} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -23,10 +26,13 @@ import { RegisterComponent } from './auth/register/register.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormField,
+    MatButton,
+    MatInput,
+    MatLabel
   ],
   providers: [
     provideClientHydration(),
