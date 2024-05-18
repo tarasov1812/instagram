@@ -13,12 +13,11 @@ export class NavigationComponent implements OnInit {
 
   isLoggedIn = false;
   isDataLoaded = false;
-  user: User | null;
+  user: User | undefined;
 
   constructor(private tokenService: TokenStorageService,
               private userService: UserService,
               private router: Router) {
-    this.user = this.tokenService.getUser();
   }
 
   ngOnInit(): void {

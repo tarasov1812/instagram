@@ -14,13 +14,15 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import {MatTooltip} from "@angular/material/tooltip";
+import { IndexComponent } from './layout/index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    NavigationComponent
+    NavigationComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

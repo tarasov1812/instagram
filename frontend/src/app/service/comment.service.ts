@@ -16,7 +16,7 @@ export class CommentService {
       return this.http.post(COMMENT_API + postId + "/create", {message: message});
   }
 
-  getCommentToPost(postId: number): Observable<any> {
+  getCommentToPost(postId: number | undefined): Observable<any> {
       return this.http.get(COMMENT_API + postId + "/all");
   }
 
