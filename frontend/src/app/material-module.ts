@@ -21,7 +21,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatMenuModule,
     MatDividerModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
   ]
 })
 

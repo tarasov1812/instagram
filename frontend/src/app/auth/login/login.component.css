@@ -10,5 +10,14 @@
 }
 
 mat-form-field {
-  width: 50%;
+  width: 40%;
 }
+
+.mdc-notched-outline__notch {
+  border-style: solid
+}
+
+button {
+  margin: 0 15px;
+}
+

@@ -5,10 +5,12 @@ import {TokenStorageService} from "../../service/token-storage.service";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../service/notification.service";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  standalone: false
 })
 
 export class LoginComponent implements OnInit {
