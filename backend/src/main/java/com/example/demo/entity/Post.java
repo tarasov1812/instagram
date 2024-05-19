@@ -19,9 +19,9 @@ public class Post {
     private String location;
     private Integer likes;
     @Column
-    @ElementCollection(targetClass = String.class)
+    @ElementCollection(fetch = FetchType.EAGER, targetClass = String.class)
     private Set<String> likedUsers = new HashSet<>();
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "post", orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();

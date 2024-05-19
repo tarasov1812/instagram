@@ -37,7 +37,7 @@ public class User implements UserDetails {
     private String bio;
     @Column(length = 3000)
     private String password;
-    @ElementCollection(targetClass = ERole.class)
+    @ElementCollection(fetch = FetchType.EAGER, targetClass = ERole.class)
     @CollectionTable(name = "user_role",
     joinColumns = @JoinColumn(name = "user_id"))
     private Set<ERole> roles = new HashSet<>();
