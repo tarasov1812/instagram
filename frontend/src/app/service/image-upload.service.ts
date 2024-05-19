@@ -21,7 +21,7 @@ export class ImageUploadService {
   uploadImageToPost(file: File, postId: number): Observable<any> {
       const uploadData = new FormData();
       uploadData.append('file', file);
-      return this.http.post(IMAGE_API + postId + "upload", uploadData);
+      return this.http.post(IMAGE_API + postId + "/upload", uploadData);
   }
 
   getProfileImage(): Observable<any> {
