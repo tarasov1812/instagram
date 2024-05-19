@@ -1,0 +1,11 @@
+.post-card {
+  display: block;
+  margin: 1rem auto;
+  width: 40%;
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
