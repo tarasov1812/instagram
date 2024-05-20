@@ -73,15 +73,18 @@ export class UserPostsComponent implements OnInit {
     return 'data:image/jpeg;base64,' + img;
   }
 
-  deleteComment(commentId: number, postIndex: number, commentIndex: number): void {
+  deleteComment(commentId: number | undefined, postIndex: number, commentIndex: number): void {
     const post = this.posts[postIndex];
-
-    this.commentService.deleteComment(commentId)
-      .subscribe(() => {
-        this.notificationService.showSnackBar('Comment removed');
-        // @ts-ignore
-        post.comments.splice(commentIndex, 1);
-      });
+    if (commentId !== undefined) {
+      this.commentService.deleteComment(commentId)
+        .subscribe(() => {
+          this.notificationService.showSnackBar('Comment removed');
+          // @ts-ignore
+          post.comments.splice(commentIndex, 1);
+        });
+    } else {
+      this.notificationService.showSnackBar('Error while removing comment');
+    }
   }
 
 }
